@@ -1,7 +1,7 @@
 #!/usr/bin/env nextflow
 
 count = 0
-input_file = file(params.path)
+input_file = file("$baseDir/$params.path")
 
 input_file.splitFasta( by: 10, limit: 100 ) { 
   println it;
