@@ -1,13 +1,12 @@
 #!/usr/bin/env nextflow
 
-cheers = Channel.from 'Bonjour', 'Ciao', 'Hello', 'Hola'
+count = 0
 
-process sayHello {
-  echo true
-  input: 
-    val x from cheers
-  script:
-    """
-    echo '$x world!'
-    """
-}
+
+input_file.splitFasta( by: 10, limit: 100 ) { 
+  println it;
+  count++
+} 
+
+
+println "Total fasta splits: $count"
