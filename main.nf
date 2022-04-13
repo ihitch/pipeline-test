@@ -2,6 +2,7 @@
 nextflow.enable.dsl=2
 params.sleep = 2
 params.pcm = "medium-priority-np"
+memory "${params.memory}"
 
 /*process test {
     pod = [priorityClassName: "${params.pcm}"]
