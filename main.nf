@@ -6,7 +6,7 @@ params.memory = '2 GB'
 
 process test {
     container = 'nextflow/examples:latest'
-    pod = [priorityClassName: "${params.pcm}"]
+    pod priorityClassName: "${params.pcm}"
     memory "${params.memory}"
     
     script:
