@@ -2,21 +2,22 @@
 nextflow.enable.dsl=2
 params.sleep = 2
 params.pcm = "medium-priority-np"
-memory "${params.memory}"
+params.memory = '2 GB'
 
-/*process test {
+process test {
     pod = [priorityClassName: "${params.pcm}"]
+    memory "${params.memory}"
     
     script:
     """
     sleep ${params.sleep}
     """
-}*/
+}
 
-pod = [priorityClassName: "${params.pcm}"]
+/*pod = [priorityClassName: "${params.pcm}"]
 Channel
      .fromPath("$params.path")
      .splitFasta( by: 10 )
      .view()
-
+*/
  
