@@ -6,9 +6,7 @@ process test {
     
     script:
     """
-    echo 'Starting A'
-    sleep 10
-    printf 'Finished A'
+    sleep ${params.sleep}
     """
 }
 
