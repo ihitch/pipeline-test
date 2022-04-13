@@ -1,6 +1,7 @@
 #!/usr/bin/env nextflow
+nextflow.enable.dsl=2
 
-process A {
+process test {
     pod = [priorityClassName: "$params.pcm"]
     
     output:
