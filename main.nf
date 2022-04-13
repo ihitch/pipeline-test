@@ -14,6 +14,10 @@ process test {
     """
 }
 
+workflow {
+    test()
+}
+
 /*pod = [priorityClassName: "${params.pcm}"]
 Channel
      .fromPath("$params.path")
