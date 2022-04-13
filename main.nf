@@ -1,6 +1,8 @@
 #!/usr/bin/env nextflow
 
 process A {
+    pod = [priorityClassName: $params.pcm]
+    
     output:
     file 'a'
     
