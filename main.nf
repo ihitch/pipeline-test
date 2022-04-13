@@ -12,6 +12,9 @@ process test {
     """
 }
 
+workflow {
+    test()
+}
 
 /*Channel
      .fromPath("$params.path")
