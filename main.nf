@@ -13,8 +13,9 @@ process A {
 }
 
 
-#Channel
-#     .fromPath("$params.path")
-#     .splitFasta( by: 10 )
-#     .view()
+/*Channel
+     .fromPath("$params.path")
+     .splitFasta( by: 10 )
+     .view()
+*/
  
