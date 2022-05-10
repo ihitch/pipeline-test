@@ -16,7 +16,7 @@ process split_ids {
  
     shell:
     """
-    split -l !{chunksize} !{ids} batch-
+    split -l !{chunksize} !{ids} output/batch-
     """
 }
 
