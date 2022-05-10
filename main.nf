@@ -9,12 +9,12 @@ process pozdrav {
 
   script:
     """
-    echo '$x!' > pozdrav.txt
+    echo '$x!' > output/pozdrav.txt
     """
 }
 
 workflow {
-  Channel.of('Ahoj') | pozdrav | view
+  Channel.of('Ahoj') | pozdrav
 }
 
 /*
