@@ -4,7 +4,7 @@ nextflow.enable.dsl=2
 process sayHello {
   container = 'quay.io/nextflow/bash'
   cpus 0.1
-  pod priorityClassName: "low-priority-np"
+  pod priorityClassName: "high-priority"
   
   input: 
     val x
