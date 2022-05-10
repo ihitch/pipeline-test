@@ -14,7 +14,7 @@ process pozdrav {
 }
 
 workflow {
-  Channel.of('Ahoj') | sayHello | view
+  Channel.of('Ahoj') | pozdrav | view
 }
 
 /*
