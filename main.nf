@@ -1,28 +1,6 @@
 #!/usr/bin/env nextflow
 nextflow.enable.dsl=2 
 
-workflow {
-    ids = Channel.fromPath('input/ids.txt')
-    chunksize = Channel.value(1)
-    split_ids(ids, chunksize)
-}
-process split_ids {
-    input:
-    path(ids)
-    val(chunksize)
- 
-    output:
-    file('output/b*')
- 
-    shell:
-    """
-    split -l !{chunksize} !{ids} output/b-
-    """
-}
-
-
-
-/*
 process pozdrav {
   
   input: 
@@ -31,7 +9,7 @@ process pozdrav {
     stdout
   script:
     """
-    echo '$x!'
+    echo '$x!' > output/pozdrav.txt
     """
 }
 
@@ -39,7 +17,7 @@ workflow {
   Channel.of('Ahoj') | sayHello | view
 }
 
-
+/*
 #!/usr/bin/env nextflow
 nextflow.enable.dsl=2
 params.sleep = 2
