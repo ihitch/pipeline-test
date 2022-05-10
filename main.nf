@@ -1,8 +1,26 @@
 #!/usr/bin/env nextflow
+nextflow.enable.dsl=2 
+
+process sayHello {
+  input: 
+    val x
+  output:
+    stdout
+  script:
+    """
+    echo '$x world!'
+    """
+}
+
+workflow {
+  Channel.of('Bonjour', 'Ciao', 'Hello', 'Hola') | sayHello | view
+}
+
+/*
+#!/usr/bin/env nextflow
 nextflow.enable.dsl=2
 params.sleep = 2
 params.pcm = "medium-priority-np"
-params.memory = '2 GB'
 
 process test {
     container = 'nextflow/examples:latest'
@@ -19,7 +37,7 @@ workflow {
     test()
 }
 
-/*pod = [priorityClassName: "${params.pcm}"]
+pod = [priorityClassName: "${params.pcm}"]
 Channel
      .fromPath("$params.path")
      .splitFasta( by: 10 )
