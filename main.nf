@@ -1,10 +1,9 @@
 #!/usr/bin/env nextflow
 nextflow.enable.dsl=2 
 
+
+
 process sayHello {
-  container = 'quay.io/nextflow/bash'
-  cpus 0.1
-  pod priorityClassName: "high-priority"
   
   input: 
     val x
@@ -13,7 +12,6 @@ process sayHello {
   script:
     """
     echo '$x world!'
-    sleep 300
     """
 }
 
