@@ -5,11 +5,11 @@ process pozdrav {
   
   input: 
     val x
-  output:
-    path 'pozdrav.txt'
+
+
   script:
     """
-    echo '$x!'
+    echo '$x!' > pozdrav.txt
     """
 }
 
