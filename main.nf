@@ -9,7 +9,7 @@ process pozdrav {
     stdout
   script:
     """
-    echo '$x world!'
+    echo '$x! :)'
     """
 }
 workflow {
