@@ -6,10 +6,10 @@ process pozdrav {
   input: 
     val x
   output:
-    stdout
+    file('output/pozdrav.txt')
   script:
     """
-    echo '$x!' > output/pozdrav.txt
+    echo '$x!'
     """
 }
 
