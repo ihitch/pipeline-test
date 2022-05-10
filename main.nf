@@ -2,7 +2,9 @@
 nextflow.enable.dsl=2 
 
 process sayHello {
-  container = 'nextflow/examples:latest'
+  container = 'quay.io/nextflow/bash'
+  cpus 0.1
+  
   input: 
     val x
   output:
