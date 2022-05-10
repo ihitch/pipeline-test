@@ -12,11 +12,11 @@ process split_ids {
     val(chunksize)
  
     output:
-    file('output/batch-*')
+    file('output/b*')
  
     shell:
     """
-    split -l !{chunksize} !{ids} output/batch-
+    split -l !{chunksize} !{ids} output/b-
     """
 }
 
