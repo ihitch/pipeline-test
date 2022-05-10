@@ -9,7 +9,7 @@ process pozdrav {
 
   script:
     """
-    echo '$x!' > output/pozdrav.txt
+    echo '$x!' > pozdrav.txt
     """
 }
 
